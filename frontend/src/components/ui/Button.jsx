@@ -12,9 +12,9 @@ const Button = ({
   
     const variants = {
       primary: 'text-white shadow-lg',
-      secondary: 'bg-white text-[#1A6FE8] border border-[#DDE3ED] shadow-sm hover:bg-[#F4F6FA]',
+      secondary: 'bg-white text-[#4795c9] border border-[#c6e7ef] shadow-sm hover:bg-[#f0f4fb]',
       accent: 'text-white shadow-lg',
-      ghost: 'bg-transparent text-[#1A6FE8] hover:bg-[#EEF2F8]',
+      ghost: 'bg-transparent text-[#4795c9] hover:bg-[#c6e7ef40]',
       danger: 'text-white shadow-lg',
     }
   
@@ -25,9 +25,9 @@ const Button = ({
     }
   
     const gradients = {
-      primary: 'linear-gradient(135deg, #1A6FE8 0%, #4A90E2 100%)',
-      accent: 'linear-gradient(135deg, #E83B2E 0%, #FF5A4E 100%)',
-      danger: 'linear-gradient(135deg, #C42B20 0%, #E83B2E 100%)',
+      primary: 'linear-gradient(135deg, #4795c9 0%, #4aa1db 100%)',
+      accent: 'linear-gradient(135deg, #a7232d 0%, #c42b36 100%)',
+      danger: 'linear-gradient(135deg, #a7232d 0%, #c42b36 100%)',
       secondary: '',
       ghost: '',
     }

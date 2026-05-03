@@ -40,15 +40,15 @@ const Step9_Review = () => {
         {ITEMS.map(item=>{
           const done = statusOf(item.path)==='done'
           return (
-            <div key={item.label} onClick={()=>navigate(item.path)} className="card" style={{display:'flex',alignItems:'center',gap:12,padding:'14px 16px',marginBottom:10,cursor:'pointer'}}>
-              <div style={{width:32,height:32,borderRadius:'50%',background:done?'#D1FAE5':'#EBF0F8',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
+             <div key={item.label} onClick={()=>navigate(item.path)} className="card" style={{display:'flex',alignItems:'center',gap:12,padding:'14px 16px',marginBottom:10,cursor:'pointer',borderLeft:'2px solid transparent',transition:'border-color .2s'}} onMouseEnter={e=>e.currentTarget.style.borderLeftColor='#a7232d'} onMouseLeave={e=>e.currentTarget.style.borderLeftColor='transparent'}>
+              <div style={{width:32,height:32,borderRadius:'50%',background:done?'#D1FAE5':'#fdecea',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,border:'1.5px solid',borderColor:done?'#047857':'#a7232d'}}>
                 {done
-                  ? <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  : <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8496A9" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  ? <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#047857" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  : <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#a7232d" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                 }
               </div>
               <span style={{flex:1,fontSize:14,fontWeight:600,color:'#08142E'}}>{item.label}</span>
-              <span style={{fontSize:11,fontWeight:700,color:done?'#047857':'#8496A9'}}>{done?'Done':'Pending'}</span>
+              <span style={{fontSize:11,fontWeight:700,color:done?'#047857':'#a7232d'}}>{done?'Done':'Pending'}</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8496A9" strokeWidth="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
             </div>
           )

@@ -29,9 +29,9 @@ const Children = () => {
 
   return (
     <div className="app-shell" style={{ paddingBottom: 80 }}>
-      <div style={{ background: 'white', padding: '52px 20px 20px', borderBottom: '1px solid #D8E2EE', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <PrismMark size={28} />
+       <div style={{ background: 'white', padding: '52px 20px 20px', borderBottom: '1px solid #D8E2EE', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+           <img src="/icon.png" style={{ width: 70, height: 70, objectFit: 'contain' }} />
           <h1 style={{ fontSize: 20, fontWeight: 800, color: '#08142E', fontFamily: 'Syne,sans-serif' }}>Children</h1>
         </div>
         <button onClick={() => setShowForm(true)} style={{ width: 36, height: 36, borderRadius: '50%', background: 'linear-gradient(135deg,#1558D6,#3B7FF5)', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 12px rgba(21,88,214,.3)' }}>
@@ -56,7 +56,7 @@ const Children = () => {
               <label className="hp-label">Gender</label>
               <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
                 {['male', 'female'].map(g => (
-                  <button key={g} onClick={() => set('gender', g)} style={{ flex: 1, padding: '10px', borderRadius: 12, border: `1.5px solid ${form.gender === g ? '#1558D6' : '#D8E2EE'}`, background: form.gender === g ? '#EBF1FD' : 'white', color: form.gender === g ? '#1558D6' : '#3A4D66', fontWeight: 700, fontSize: 13, cursor: 'pointer', fontFamily: 'DM Sans,sans-serif', textTransform: 'capitalize' }}>{g}</button>
+                  <button key={g} onClick={() => set('gender', g)} style={{ flex: 1, padding: '10px', borderRadius: 12, border: `1.5px solid ${form.gender === g ? '#4795c9' : '#D8E2EE'}`, background: form.gender === g ? '#c6e7ef' : 'white', color: form.gender === g ? '#4795c9' : '#3A4D66', fontWeight: 700, fontSize: 13, cursor: 'pointer', fontFamily: 'DM Sans,sans-serif', textTransform: 'capitalize' }}>{g}</button>
                 ))}
               </div>
             </div>
@@ -91,7 +91,7 @@ const Children = () => {
               <p style={{ fontSize: 15, fontWeight: 700, color: '#08142E' }}>{p.name}</p>
               <p style={{ fontSize: 12, color: '#8496A9', marginTop: 2 }}>{ageFromYear(p.birthYear)} years old · {p.gender}</p>
             </div>
-            <button onClick={() => handleSelect(p)} style={{ background: 'linear-gradient(135deg,#1558D6,#3B7FF5)', border: 'none', borderRadius: 999, padding: '8px 16px', color: 'white', fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>Assess</button>
+             <button onClick={() => handleSelect(p)} style={{ background: 'linear-gradient(135deg,#4795c9,#4aa1db)', border: 'none', borderRadius: 999, padding: '8px 16px', color: 'white', fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>Assess</button>
             <button onClick={() => removePatient(p.id)} style={{ background: '#FDECEA', border: 'none', borderRadius: '50%', width: 32, height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8291C" strokeWidth="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>
             </button>

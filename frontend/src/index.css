@@ -3,19 +3,22 @@
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden}
-body{font-family:'DM Sans',sans-serif;background:#F0F4FB;color:#08142E;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
+body{font-family:'DM Sans',sans-serif;background:#F0F4FB;background-image:radial-gradient(circle at 20% 80%,var(--prism-1),transparent 40%),radial-gradient(circle at 80% 20%,var(--prism-2),transparent 30%),radial-gradient(circle at 50% 50%,var(--prism-red),transparent 60%);color:#08142E;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
 #root{height:100%}
 
 :root{
-  --blue:#1558D6;--blue-l:#3B7FF5;--blue-d:#0D3FA6;--blue-pale:#EBF1FD;
-  --red:#E8291C;--red-l:#FF4436;--red-pale:#FDECEA;
+  --blue-pale:#c6e7ef;--blue-soft:#99c5e3;--blue-mid:#4795c9;--blue-deep:#4aa1db;
+  --blue-light:#d9eff7;--blue-lighter:#e8f4fa;
+  --red-heart:#a7232d;--red-bloom:#c42b36;--red-pale:#FDECEA;--red-glow:rgba(167,35,45,.15);
   --bg:#F0F4FB;--surface:#fff;--surface2:#EBF0F8;
   --t1:#08142E;--t2:#3A4D66;--t3:#8496A9;--border:#D8E2EE;
   --ok:#10B981;--warn:#F59E0B;
   --sh-sm:0 1px 4px rgba(8,20,46,.06),0 2px 12px rgba(8,20,46,.04);
   --sh-md:0 2px 8px rgba(8,20,46,.06),0 4px 24px rgba(8,20,46,.08);
-  --sh-blue:0 6px 24px rgba(21,88,214,.32);
-  --sh-red:0 6px 24px rgba(232,41,28,.30);
+  --sh-blue:0 6px 24px rgba(71,149,201,.32);
+  --sh-red:0 6px 24px rgba(167,35,45,.30);
+  --prism-1:rgba(198,231,239,.4);--prism-2:rgba(153,197,227,.3);--prism-3:rgba(71,149,201,.25);
+  --prism-red:rgba(167,35,45,.08);
 }
 
 .app-shell{max-width:430px;margin:0 auto;min-height:100svh;background:var(--bg);position:relative;overflow-x:hidden}
@@ -24,17 +27,51 @@ body{font-family:'DM Sans',sans-serif;background:#F0F4FB;color:#08142E;-webkit-f
 .hp-input:focus{border-bottom-color:var(--blue)}
 .hp-input::placeholder{color:var(--t3);font-weight:400;font-size:16px}
 .hp-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
-.btn-primary{width:100%;padding:16px;background:linear-gradient(135deg,#1558D6,#3B7FF5);color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;border-radius:999px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:var(--sh-blue)}
+.btn-primary{width:100%;padding:16px;background:linear-gradient(135deg,var(--blue-mid),var(--blue-deep));color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;border-radius:999px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:var(--sh-blue);position:relative;overflow:hidden}
+.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .5s}
+.btn-primary:hover::before{left:100%}
+.btn-accent{width:100%;padding:16px;background:linear-gradient(135deg,var(--red-heart),var(--red-bloom));color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;border-radius:999px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:var(--sh-red);position:relative;overflow:hidden}
+.btn-accent::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transition:left .5s}
+.btn-accent:hover::before{left:100%}
+.btn-outline{width:100%;padding:14px;background:#fff;color:var(--blue-mid);font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;border-radius:999px;border:1.5px solid var(--border);cursor:pointer}
+.btn-outline:hover{border-color:var(--blue-deep);color:var(--blue-deep)}
 .btn-primary:disabled{background:#D8E2EE;color:#8496A9;box-shadow:none;cursor:not-allowed}
-.btn-accent{width:100%;padding:16px;background:linear-gradient(135deg,#E8291C,#FF4436);color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;border-radius:999px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:var(--sh-red)}
-.btn-outline{width:100%;padding:14px;background:#fff;color:var(--blue);font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;border-radius:999px;border:1.5px solid var(--border);cursor:pointer}
+
+/* Progress bar with prism gradient */
+.progress-bar{width:100%;height:6px;border-radius:999px;background:var(--prism-1);overflow:hidden;position:relative}
+.progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue-mid),var(--blue-deep),var(--red-heart));transition:width .4s ease;background-size:200% 100%;animation:shimmerBlue 2s linear infinite,progressPulse 3s ease-in-out infinite}
+
 .bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-top:1px solid var(--border);display:flex;justify-content:space-around;align-items:center;padding:10px 8px 22px;z-index:100}
+
+/* Prism glass effects */
+.prism-glass{background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(198,231,239,.2))!important;backdrop-filter:blur(12px)!important;border:1px solid rgba(153,197,227,.3)!important;position:relative;overflow:hidden}
+.prism-glass::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(45deg,var(--prism-1),transparent,var(--prism-2));pointer-events:none;animation:prismSlow 8s ease-in-out infinite}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 @keyframes spin{to{transform:rotate(360deg)}}
-.fade-up{animation:fadeUp .4s ease both}
-.pulse-anim{animation:pulse 1.5s ease-in-out infinite}
-.spin-anim{animation:spin 1s linear infinite}
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-thumb{background:var(--border);border-radius:999px}
+@keyframes prismSlow{0%,100%{opacity:.5;transform:translateX(-20%) rotate(45deg)}50%{opacity:1;transform:translateX(20%) rotate(45deg)}}
+@keyframes shimmerBlue{0%,100%{background-position:-200% 0}50%{background-position:200% 0}}
+@keyframes pulseRed{0%,100%{opacity:1}50%{opacity:.6}}
+
+/* Prism accent borders */
+.prism-blue{border-left:3px solid var(--blue-mid)!important}
+.prism-red{border-left:3px solid var(--red-heart)!important}
+.prism-pulse-red{animation:pulseRed 1.5s ease-in-out infinite}
+
+/* Red accent highlights */
+.red-accent{color:var(--red-heart)!important}
+.bg-red-pale{background-color:var(--red-pale)!important}
+
+/* Additional red accent utilities */
+.red-border{border-color:var(--red-heart)!important}
+.red-shadow{box-shadow:var(--sh-red)!important}
+.red-glow{background:var(--red-glow)!important}
+
+/* Step indicator with red accent */
+.step-dot-red{width:10px;height:10px;border-radius:50%;background:var(--red-heart);box-shadow:0 0 8px var(--red-heart)}
+.step-dot-red::after{content:'';position:absolute;width:10px;height:10px;border-radius:50%;background:var(--red-heart);animation:pulseRed 1.5s ease-in-out infinite}
+
+/* Lighter blue backgrounds for steps */
+.step-bg-light{background:var(--blue-lighter)!important}
+.step-bg-pale{background:var(--blue-light)!important}

@@ -91,7 +91,7 @@ const Step10_Results = () => {
             </div>
             {detectedFactors.map(f => (
               <div key={f.text} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'flex-start' }}>
-                <div style={{ width: 8, height: 8, borderRadius: '50%', background: f.critical ? '#E8291C' : '#F59E0B', marginTop: 4, flexShrink: 0 }} />
+                 <div style={{ width: 8, height: 8, borderRadius: '50%', background: f.critical ? '#a7232d' : '#F59E0B', marginTop: 4, flexShrink: 0 }} />
                 <div>
                   <p style={{ fontSize: 13, fontWeight: 700, color: '#08142E' }}>{f.text}</p>
                   <p style={{ fontSize: 12, color: '#3A4D66', marginTop: 2, lineHeight: 1.5 }}>{f.sub}</p>
@@ -101,15 +101,15 @@ const Step10_Results = () => {
           </div>
         )}
 
-        <div style={{ background: profile.overall === 'CRITICAL' ? '#FDECEA' : '#EBF1FD', borderRadius: 16, padding: '14px 16px', marginBottom: 16, borderLeft: `3px solid ${profile.overall === 'CRITICAL' ? '#E8291C' : '#1558D6'}` }}>
-          <p style={{ fontSize: 13, fontWeight: 700, color: profile.overall === 'CRITICAL' ? '#C01F14' : '#0D3FA6' }}>Recommended Action</p>
-          <p style={{ fontSize: 12, color: profile.overall === 'CRITICAL' ? '#C01F14' : '#1558D6', marginTop: 4, lineHeight: 1.5 }}>{action}</p>
-        </div>
+         <div style={{ background: profile.overall === 'CRITICAL' ? '#FDECEA' : '#EBF1FD', borderRadius: 16, padding: '14px 16px', marginBottom: 16, borderLeft: `3px solid ${profile.overall === 'CRITICAL' ? '#a7232d' : '#4795c9'}` }}>
+           <p style={{ fontSize: 13, fontWeight: 700, color: profile.overall === 'CRITICAL' ? '#C01F14' : '#0D3FA6' }}>Recommended Action</p>
+           <p style={{ fontSize: 12, color: profile.overall === 'CRITICAL' ? '#C01F14' : '#1558D6', marginTop: 4, lineHeight: 1.5 }}>{action}</p>
+         </div>
 
         <h2 style={{ fontSize: 17, fontWeight: 800, color: '#08142E', marginBottom: 12, fontFamily: 'Syne,sans-serif' }}>Recommendations</h2>
         {recommendations.map((r, i) => (
-          <div key={i} className="card" style={{ display: 'flex', gap: 12, padding: '14px 16px', marginBottom: 10, alignItems: 'flex-start', borderLeft: `3px solid ${r.urgent ? '#E8291C' : '#1558D6'}` }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: r.urgent ? '#E8291C' : '#1558D6', marginTop: 4, flexShrink: 0 }} />
+           <div key={i} className="card" style={{ display: 'flex', gap: 12, padding: '14px 16px', marginBottom: 10, alignItems: 'flex-start', borderLeft: `3px solid ${r.urgent ? '#a7232d' : '#4795c9'}` }}>
+             <div style={{ width: 8, height: 8, borderRadius: '50%', background: r.urgent ? '#a7232d' : '#4795c9', marginTop: 4, flexShrink: 0 }} />
             <div>
               <p style={{ fontSize: 13, fontWeight: 700, color: '#08142E' }}>{r.title}</p>
               <p style={{ fontSize: 12, color: '#3A4D66', marginTop: 3, lineHeight: 1.5 }}>{r.desc}</p>

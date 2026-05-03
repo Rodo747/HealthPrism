@@ -62,10 +62,11 @@ const BottomNav = () => {
             onClick={() => navigate(tab.path)}
             className="flex flex-col items-center gap-1 px-4 py-1"
           >
-            {tab.icon(active)}
-            <span className={`text-xs font-medium ${active ? 'text-[#1A6FE8]' : 'text-[#9AA5B4]'}`}>
-              {tab.label}
-            </span>
+          {tab.icon(active)}
+           <span className={`text-xs font-medium ${active ? 'text-[#a7232d]' : 'text-[#9AA5B4]'}`}>
+            {tab.label}
+          </span>
+          {active && <div style={{width:6,height:6,borderRadius:'50%',background:'#a7232d',marginTop:2}} />}
           </button>
         )
       })}

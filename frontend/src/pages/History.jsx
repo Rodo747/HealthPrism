@@ -4,7 +4,7 @@ import { loadReports } from '../services/storageService'
 import { PrismMark, BottomNav } from '../components/shared'
 
 const riskColor = (level) => ({
-  CRITICAL:   { bg:'#FDECEA', color:'#E8291C' },
+  CRITICAL:   { bg:'#FDECEA', color:'#a7232d' },
   VULNERABLE: { bg:'#FEF3C7', color:'#B45309' },
   STABLE:     { bg:'#D1FAE5', color:'#047857' },
 }[level] || { bg:'#EBF0F8', color:'#8496A9' })
@@ -26,7 +26,7 @@ const History = () => {
   return (
     <div className="app-shell" style={{ paddingBottom: 80 }}>
       <div style={{ background: 'white', padding: '52px 20px 20px', borderBottom: '1px solid #D8E2EE', display: 'flex', alignItems: 'center', gap: 10 }}>
-        <PrismMark size={28} />
+        <img src="/icon.png" style={{ width: 70, height: 70, objectFit: 'contain' }} />
         <h1 style={{ fontSize: 20, fontWeight: 800, color: '#08142E', fontFamily: 'Syne,sans-serif' }}>Assessment History</h1>
       </div>
 

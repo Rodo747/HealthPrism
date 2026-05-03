@@ -14,29 +14,35 @@ import Step7_Breathing from './pages/steps/Step7_Breathing'
 import Step8_Symptoms from './pages/steps/Step8_Symptoms'
 import Step9_Review from './pages/steps/Step9_Review'
 import Step10_Results from './pages/steps/Step10_Results'
+import { useState } from 'react'
+import SplashScreen from './components/SplashScreen'
 
 function App() {
+  const [splash, setSplash] = useState(true)
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/"              element={<Home />} />
-        <Route path="/history"       element={<History />} />
-        <Route path="/children"      element={<Children />} />
-        <Route path="/settings"      element={<Settings />} />
-        <Route path="/check"         element={<NewCheck />} />
-        <Route path="/check/step1"   element={<Step1_Data />} />
-        <Route path="/check/step2"   element={<Step2_Face />} />
-        <Route path="/check/step3"   element={<Step3_Conjunctiva />} />
-        <Route path="/check/step4"   element={<Step4_Hand />} />
-        <Route path="/check/step5"   element={<Step5_Nails />} />
-        <Route path="/check/step6"   element={<Step6_PPG />} />
-        <Route path="/check/step7"   element={<Step7_Breathing />} />
-        <Route path="/check/step8"   element={<Step8_Symptoms />} />
-        <Route path="/check/step9"   element={<Step9_Review />} />
-        <Route path="/check/step10"  element={<Step10_Results />} />
-        <Route path="*"              element={<Navigate to="/" />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      {splash && <SplashScreen onDone={() => setSplash(false)} />}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/"              element={<Home />} />
+          <Route path="/history"       element={<History />} />
+          <Route path="/children"      element={<Children />} />
+          <Route path="/settings"      element={<Settings />} />
+          <Route path="/check"         element={<NewCheck />} />
+          <Route path="/check/step1"   element={<Step1_Data />} />
+          <Route path="/check/step2"   element={<Step2_Face />} />
+          <Route path="/check/step3"   element={<Step3_Conjunctiva />} />
+          <Route path="/check/step4"   element={<Step4_Hand />} />
+          <Route path="/check/step5"   element={<Step5_Nails />} />
+          <Route path="/check/step6"   element={<Step6_PPG />} />
+          <Route path="/check/step7"   element={<Step7_Breathing />} />
+          <Route path="/check/step8"   element={<Step8_Symptoms />} />
+          <Route path="/check/step9"   element={<Step9_Review />} />
+          <Route path="/check/step10"  element={<Step10_Results />} />
+          <Route path="*"              element={<Navigate to="/" />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 export default App
