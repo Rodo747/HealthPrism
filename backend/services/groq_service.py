@@ -2,7 +2,6 @@ import os
 import json
 from groq import Groq
 
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
 def build_prompt(data: dict) -> str:
     profile = data.get("riskProfile", {})
@@ -40,6 +39,7 @@ Respond ONLY with a valid JSON array, no markdown, no explanation:
 
 async def get_ai_recommendations(data: dict) -> list[dict] | None:
     try:
+        client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
         prompt = build_prompt(data)
         response = client.chat.completions.create(
             model="meta-llama/llama-4-scout-17b-16e-instruct",
