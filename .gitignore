@@ -1,0 +1,21 @@
+# ML datasets y modelos grandes
+ml_training/datasets/
+ml_training/venv/
+ml_training/saved_models/
+ml_training/__pycache__/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Backend
+backend/__pycache__/
+backend/venv/
+backend/.env
+
+# Env files
+frontend/.env
+
+# Python
+*.pyc
+__pycache__/

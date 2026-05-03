@@ -1,0 +1,57 @@
+{
+  "note": "Simplified WHO weight-for-age z-scores for boys and girls 0-60 months",
+  "boys": {
+    "12": {
+      "minus2": 7.7,
+      "median": 9.6,
+      "plus2": 11.9
+    },
+    "24": {
+      "minus2": 9.7,
+      "median": 12.2,
+      "plus2": 15.3
+    },
+    "36": {
+      "minus2": 11.3,
+      "median": 14.3,
+      "plus2": 18.1
+    },
+    "48": {
+      "minus2": 12.7,
+      "median": 16.3,
+      "plus2": 20.9
+    },
+    "60": {
+      "minus2": 14.1,
+      "median": 18.3,
+      "plus2": 23.9
+    }
+  },
+  "girls": {
+    "12": {
+      "minus2": 7.0,
+      "median": 8.9,
+      "plus2": 11.5
+    },
+    "24": {
+      "minus2": 9.0,
+      "median": 11.5,
+      "plus2": 14.8
+    },
+    "36": {
+      "minus2": 10.8,
+      "median": 13.9,
+      "plus2": 18.1
+    },
+    "48": {
+      "minus2": 12.3,
+      "median": 15.9,
+      "plus2": 21.0
+    },
+    "60": {
+      "minus2": 13.7,
+      "median": 17.7,
+      "plus2": 23.8
+    }
+  }
+}

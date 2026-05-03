@@ -1,0 +1,91 @@
+{
+  "ironRichFoods": [
+    {
+      "name": "Quinoa",
+      "ironMg": 2.8,
+      "region": [
+        "bolivia",
+        "peru"
+      ],
+      "serving": "100g cooked"
+    },
+    {
+      "name": "Beef liver",
+      "ironMg": 6.5,
+      "region": [
+        "bolivia",
+        "peru"
+      ],
+      "serving": "85g"
+    },
+    {
+      "name": "Lentils",
+      "ironMg": 3.3,
+      "region": [
+        "bolivia",
+        "peru"
+      ],
+      "serving": "100g cooked"
+    },
+    {
+      "name": "Spinach",
+      "ironMg": 2.7,
+      "region": [
+        "bolivia",
+        "peru"
+      ],
+      "serving": "100g cooked"
+    },
+    {
+      "name": "Ca\u00f1ahua",
+      "ironMg": 8.8,
+      "region": [
+        "bolivia"
+      ],
+      "serving": "100g"
+    },
+    {
+      "name": "Amaranth",
+      "ironMg": 2.1,
+      "region": [
+        "peru",
+        "bolivia"
+      ],
+      "serving": "100g cooked"
+    },
+    {
+      "name": "Sardines",
+      "ironMg": 2.9,
+      "region": [
+        "peru"
+      ],
+      "serving": "85g"
+    },
+    {
+      "name": "Black beans",
+      "ironMg": 3.6,
+      "region": [
+        "bolivia",
+        "peru"
+      ],
+      "serving": "100g cooked"
+    },
+    {
+      "name": "Chicken",
+      "ironMg": 1.3,
+      "region": [
+        "bolivia",
+        "peru"
+      ],
+      "serving": "100g"
+    }
+  ],
+  "absorptionTips": [
+    "Combine iron-rich foods with vitamin C sources (orange, lemon, tomato) to enhance absorption.",
+    "Avoid tea or coffee with iron-rich meals as tannins reduce absorption."
+  ],
+  "regionalContext": {
+    "bolivia": "High altitude increases iron requirements. Ca\u00f1ahua and quinoa are excellent local sources.",
+    "peru": "Coastal regions have access to iron-rich seafood. Highlands benefit from quinoa and kiwicha."
+  }
+}
